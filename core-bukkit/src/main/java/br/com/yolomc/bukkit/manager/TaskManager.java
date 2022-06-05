@@ -53,7 +53,6 @@ public final class TaskManager {
     }
 
     public void onStartup() {
-        postWorlded = true;
         for (Management manager : managers.values()) {
             if (!manager.isRunning()) {
                 if (manager.getLoadOrder() == ManagementLoadOrder.STARTUP) {
@@ -68,6 +67,7 @@ public final class TaskManager {
     }
 
     public void onPostWorld() {
+        postWorlded = true;
         for (Management manager : managers.values()) {
             if (!manager.isRunning()) {
                 if (manager.getLoadOrder() == ManagementLoadOrder.POSTWORLD) {
