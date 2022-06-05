@@ -8,6 +8,11 @@ import lombok.Getter;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandMap;
 
+/**
+ * Carregador de comandos por packages.
+ *
+ * @author skyprogrammer
+ */
 @Getter
 public class CommandLoader {
 
