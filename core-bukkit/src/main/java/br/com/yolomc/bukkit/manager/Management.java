@@ -15,9 +15,9 @@ public abstract class Management {
 
     private final TaskManager taskManager;
     private boolean running = false;
-    private final ManagementLoadOrder loadOrder;
+    private final LoadOrder loadOrder;
 
-    public Management(TaskManager taskManager, ManagementLoadOrder loadOrder) {
+    public Management(TaskManager taskManager, LoadOrder loadOrder) {
         this.taskManager = taskManager;
         this.loadOrder = loadOrder;
     }

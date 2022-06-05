@@ -55,7 +55,7 @@ public final class TaskManager {
     public void onStartup() {
         for (Management manager : managers.values()) {
             if (!manager.isRunning()) {
-                if (manager.getLoadOrder() == ManagementLoadOrder.STARTUP) {
+                if (manager.getLoadOrder() == LoadOrder.STARTUP) {
                     manager.start();
                     if (manager.isRunning()) {
                         plugin.getLogger().info("[STARTUP] Processo " + manager.getClass().getSimpleName()
@@ -70,7 +70,7 @@ public final class TaskManager {
         postWorlded = true;
         for (Management manager : managers.values()) {
             if (!manager.isRunning()) {
-                if (manager.getLoadOrder() == ManagementLoadOrder.POSTWORLD) {
+                if (manager.getLoadOrder() == LoadOrder.POSTWORLD) {
                     manager.start();
                     if (manager.isRunning()) {
                         plugin.getLogger().info("[POSTWORLD] Processo " + manager.getClass().getSimpleName()

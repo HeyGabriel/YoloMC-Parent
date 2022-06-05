@@ -5,7 +5,7 @@ package br.com.yolomc.bukkit.manager;
  *
  * @author skyprogrammer
  */
-public enum ManagementLoadOrder {
+public enum LoadOrder {
 
     STARTUP,
     POSTWORLD

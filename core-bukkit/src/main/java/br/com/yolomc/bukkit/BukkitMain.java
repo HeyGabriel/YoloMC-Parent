@@ -3,6 +3,7 @@ package br.com.yolomc.bukkit;
 import br.com.yolomc.bukkit.api.scoreboard.handler.ScoreboardHandler;
 import br.com.yolomc.bukkit.api.scoreboard.handler.ScoreboardUpdateListener;
 import br.com.yolomc.bukkit.command.CommandLoader;
+import br.com.yolomc.bukkit.hologram.HologramManager;
 import br.com.yolomc.bukkit.listener.PlayerNBTListener;
 import br.com.yolomc.bukkit.manager.TaskManager;
 import br.com.yolomc.bukkit.scheduler.TimerScheduler;
@@ -42,7 +43,6 @@ public abstract class BukkitMain extends JavaPlugin implements Listener {
     public void onLoad() {
         // VIA VERSION
         Via.getConfig().setCheckForUpdates(false);
-
         // PROTOCOLLIB
         try {
             Method method = ProtocolLibrary.class.getMethod("getConfiguration");
@@ -56,7 +56,12 @@ public abstract class BukkitMain extends JavaPlugin implements Listener {
             protocolConfig.setAutoDownload(false);
             protocolConfig.setMetricsEnabled(false);
         }
-
+        /**
+         * MANAGERS
+         */
+        taskManager.addQueuedManager(HologramManager.class);
+        /**
+         */
         getLogger().info("[TaskManager] Iniciando...");
         taskManager.onStartup();
     }
