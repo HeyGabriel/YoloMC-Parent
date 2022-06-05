@@ -24,7 +24,6 @@ import org.bukkit.craftbukkit.v1_8_R3.entity.CraftEntity;
 public class EntityNMSArmorStand extends EntityArmorStand implements NMSArmorStand {
 
     private boolean lockTick;
-
     private CraftHologramLine parentPiece;
 
     public EntityNMSArmorStand(World world, CraftHologramLine parentPiece) {

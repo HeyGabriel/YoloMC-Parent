@@ -23,7 +23,6 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 public class EntityNMSSlime extends EntitySlime implements NMSSlime {
 
     private boolean lockTick;
-
     private CraftTouchSlimeLine parentPiece;
 
     public EntityNMSSlime(World world, CraftTouchSlimeLine parentPiece) {
