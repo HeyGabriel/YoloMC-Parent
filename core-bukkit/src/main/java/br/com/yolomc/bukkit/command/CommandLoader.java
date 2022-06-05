@@ -25,12 +25,12 @@ public class CommandLoader {
     }
 
     public void loadCommandsFromPackage(String pkg) {
-        for (Class<?> clazz : ClassGetter.getClassesForPackageByPlugin(getPlugin(), pkg)) {
+        for (Class<?> clazz : ClassGetter.getClassesForPackageByPlugin(plugin, pkg)) {
             if (BukkitCommandWrapper.class.isAssignableFrom(clazz)) {
                try {
                    BukkitCommandWrapper commandWrapper = (BukkitCommandWrapper) clazz.getConstructor()
                            .newInstance();
-                   getCommandMap().register(getPlugin().getName(), (Command) commandWrapper.getHandle());
+                   commandMap.register(plugin.getName(), (Command) commandWrapper.getHandle());
                    Commons.getLogger().info("Comando '/" + commandWrapper.getName() + "' registrado.");
                } catch (Exception e) {
                    e.printStackTrace();
