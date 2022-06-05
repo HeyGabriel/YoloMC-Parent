@@ -58,7 +58,7 @@ public class HologramManager extends Management {
         return nmsManager.isNMSEntityBase(bukkitEntity);
     }
 
-    public static Collection<Hologram> getHolograms(Plugin plugin) {
+    public Collection<Hologram> getHolograms(Plugin plugin) {
         Validate.notNull(plugin, "plugin");
         return PluginHologramManager.getHolograms(plugin);
     }
