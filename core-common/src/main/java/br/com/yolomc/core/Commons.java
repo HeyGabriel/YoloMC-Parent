@@ -14,6 +14,7 @@ import java.lang.reflect.Modifier;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.UUID;
+import java.util.logging.Logger;
 
 /**
  * Classe API de utilidades para todos os plugins.
@@ -31,7 +32,8 @@ public class Commons {
     @Getter
     private static JsonParser jsonParser = new JsonParser();
     @Getter
-    private static Log logger = LogFactory.getLog("Commons");
+    @Setter
+    private static Logger logger;
     @Getter
     private static HashMap<UUID, YoloPlayer> accountMap = new HashMap<>();
 

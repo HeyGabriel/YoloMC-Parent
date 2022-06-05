@@ -13,7 +13,7 @@ import org.bukkit.scoreboard.Team;
  */
 public class DefaultScoreboardRender extends ScoreboardRender {
 
-    private Objective objective;
+    private final Objective objective;
 
     public DefaultScoreboardRender(Scoreboard scoreboard) {
         super(scoreboard);

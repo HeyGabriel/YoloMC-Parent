@@ -18,7 +18,7 @@ import java.util.function.Consumer;
  */
 public class ItemBuilder {
 
-    private ItemStack itemStack;
+    private final ItemStack itemStack;
 
     public ItemBuilder(Material type) {
         itemStack = new ItemStack(type);

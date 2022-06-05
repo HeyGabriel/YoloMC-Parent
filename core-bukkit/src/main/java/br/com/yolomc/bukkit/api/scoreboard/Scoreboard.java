@@ -46,10 +46,10 @@ public abstract class Scoreboard {
                     while (text.substring(0, a).endsWith("§"))
                         --a;
                     prefix = text.substring(0, a);
-                    suffix = text.substring(a, text.length());
+                    suffix = text.substring(a);
                     if (!suffix.startsWith("§"))
                         for (int i = prefix.length(); i > 0; i--) {
-                            if (prefix.substring(i - 1, i).equals("§") && prefix.substring(i, i + 1) != null) {
+                            if (prefix.charAt(i - 1) == '§' && prefix.substring(i, i + 1) != null) {
                                 suffix = prefix.substring(i - 1, i + 1) + suffix;
                                 break;
                             }

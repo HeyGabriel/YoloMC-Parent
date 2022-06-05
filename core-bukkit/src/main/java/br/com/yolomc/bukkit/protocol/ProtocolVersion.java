@@ -80,7 +80,7 @@ public enum ProtocolVersion {
 
     UNKNOWN(-1);
 
-    private int id;
+    private final int id;
 
     ProtocolVersion(int id) {
         this.id = id;

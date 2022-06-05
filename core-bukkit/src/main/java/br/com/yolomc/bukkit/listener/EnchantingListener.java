@@ -20,7 +20,7 @@ import org.bukkit.material.Dye;
  */
 public class EnchantingListener implements Listener {
 
-    private ItemStack itemStack;
+    private final ItemStack itemStack;
 
     public EnchantingListener() {
         Dye d = new Dye();

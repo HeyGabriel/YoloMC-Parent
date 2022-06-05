@@ -16,8 +16,8 @@ import org.bukkit.command.CommandMap;
 @Getter
 public class CommandLoader {
 
-    private BukkitMain plugin;
-    private CommandMap commandMap;
+    private final BukkitMain plugin;
+    private final CommandMap commandMap;
 
     public CommandLoader(BukkitMain plugin) {
         this.plugin = plugin;

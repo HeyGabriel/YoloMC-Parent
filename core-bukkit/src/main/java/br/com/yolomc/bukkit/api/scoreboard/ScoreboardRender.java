@@ -10,7 +10,7 @@ import lombok.Getter;
 @Getter
 public abstract class ScoreboardRender {
 
-    private Scoreboard scoreboard;
+    private final Scoreboard scoreboard;
 
     public ScoreboardRender(Scoreboard scoreboard) {
         this.scoreboard = scoreboard;
