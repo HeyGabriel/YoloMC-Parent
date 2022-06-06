@@ -28,13 +28,13 @@ public class NmsManagerImpl implements NMSManager {
 
     public void registerCustomEntity(Class entityClass, String name, int id) throws Exception {
         ReflectionUtils.putInPrivateStaticMap(EntityTypes.class, "d", entityClass, name);
-        ReflectionUtils.putInPrivateStaticMap(EntityTypes.class, "f", entityClass, Integer.valueOf(id));
+        ReflectionUtils.putInPrivateStaticMap(EntityTypes.class, "f", entityClass, id);
     }
 
     public EntityNMSSlime spawnNMSSlime(org.bukkit.World bukkitWorld, double x, double y, double z,
                                         CraftTouchSlimeLine parentPiece) {
         WorldServer nmsWorld = ((CraftWorld) bukkitWorld).getHandle();
-        EntityNMSSlime touchSlime = new EntityNMSSlime((World)nmsWorld, parentPiece);
+        EntityNMSSlime touchSlime = new EntityNMSSlime(nmsWorld, parentPiece);
         touchSlime.setLocationNMS(x, y, z);
         addEntityToWorld(nmsWorld, touchSlime);
         return touchSlime;
@@ -43,7 +43,7 @@ public class NmsManagerImpl implements NMSManager {
     public NMSArmorStand spawnNMSArmorStand(org.bukkit.World world, double x, double y, double z,
                                             CraftHologramLine parentPiece) {
         WorldServer nmsWorld = ((CraftWorld) world).getHandle();
-        EntityNMSArmorStand invisibleArmorStand = new EntityNMSArmorStand((World)nmsWorld, parentPiece);
+        EntityNMSArmorStand invisibleArmorStand = new EntityNMSArmorStand(nmsWorld, parentPiece);
         invisibleArmorStand.setLocationNMS(x, y, z);
         addEntityToWorld(nmsWorld, invisibleArmorStand);
         return invisibleArmorStand;

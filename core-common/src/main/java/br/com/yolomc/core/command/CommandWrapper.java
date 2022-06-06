@@ -64,7 +64,7 @@ public abstract class CommandWrapper extends AbstractWrapper {
         Field field = new FieldResolver(getHandle().getClass(), "aliases").resolve();
         if (List.class.equals(field.getType())) {
             try {
-                new MethodResolver(getHandle().getClass(), "setAliases").resolve()
+                new MethodResolver(getHandle().getClass(), "setAliases", List.class).resolve()
                         .invoke(getHandle(), Arrays.asList(aliases));
             } catch (Exception e) {
                 e.printStackTrace();
