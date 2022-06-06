@@ -1,5 +1,6 @@
 package br.com.yolomc.bukkit;
 
+import br.com.yolomc.bukkit.api.menu.MenuClickListener;
 import br.com.yolomc.bukkit.api.scoreboard.handler.ScoreboardHandler;
 import br.com.yolomc.bukkit.api.scoreboard.handler.ScoreboardUpdateListener;
 import br.com.yolomc.bukkit.command.CommandLoader;
@@ -15,6 +16,7 @@ import lombok.Getter;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.world.WorldLoadEvent;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.lang.reflect.Method;
@@ -68,10 +70,7 @@ public abstract class BukkitMain extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        getServer().getPluginManager().registerEvents(this, this);
-        getServer().getPluginManager().registerEvents(
-                new ScoreboardUpdateListener(ScoreboardHandler.getInstance()), this);
-        getServer().getPluginManager().registerEvents(new PlayerNBTListener(), this);
+        registerListeners();
         commandLoader.loadCommandsFromPackage("br.com.yolomc.bukkit.command.registry");
         getServer().getScheduler().runTaskTimer(this, new TimerScheduler(), 1, 1);
     }
@@ -79,6 +78,14 @@ public abstract class BukkitMain extends JavaPlugin implements Listener {
     @Override
     public void onDisable() {
         taskManager.destroy();
+    }
+
+    public void registerListeners() {
+        PluginManager manager = getServer().getPluginManager();
+        manager.registerEvents(this, this);
+        manager.registerEvents(new ScoreboardUpdateListener(ScoreboardHandler.getInstance()), this);
+        manager.registerEvents(new PlayerNBTListener(), this);
+        manager.registerEvents(new MenuClickListener(), this);
     }
 
     @EventHandler
