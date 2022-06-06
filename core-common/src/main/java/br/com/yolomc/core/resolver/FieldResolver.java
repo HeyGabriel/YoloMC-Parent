@@ -22,6 +22,7 @@ public class FieldResolver extends Resolver<Field> {
         Class<?> search = this.mainClass;
         try {
             found = search.getDeclaredField(name);
+            found.setAccessible(true);
         } catch (Exception err) {
             while ((search = search.getSuperclass()) != null && found == null) {
                 try {

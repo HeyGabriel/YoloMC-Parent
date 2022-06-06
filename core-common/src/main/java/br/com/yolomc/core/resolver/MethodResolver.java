@@ -25,6 +25,7 @@ public class MethodResolver extends Resolver<Method> {
         Class<?> search = this.mainClass;
         try {
             found = search.getDeclaredMethod(name, parameterTypes);
+            found.setAccessible(true);
         } catch (Exception err) {
             while ((search = search.getSuperclass()) != null && found == null) {
                 try {

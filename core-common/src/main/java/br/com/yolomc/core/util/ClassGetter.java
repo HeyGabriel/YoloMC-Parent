@@ -106,7 +106,6 @@ public class ClassGetter {
     public static List<Class<?>> getClassesForPackageByPlugin(Object plugin, String pkgname) {
         try {
             Method method = new MethodResolver(plugin.getClass(), "getFile").resolve();
-            method.setAccessible(true);
             File file = (File) method.invoke(plugin);
             return getClassesForPackageByFile(file, pkgname);
         } catch (Exception e) {
