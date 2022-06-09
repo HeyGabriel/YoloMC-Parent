@@ -13,7 +13,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class Group {
 
+    private int id;
     private String name;
-    private String teamName;
     private Tag tag;
 }

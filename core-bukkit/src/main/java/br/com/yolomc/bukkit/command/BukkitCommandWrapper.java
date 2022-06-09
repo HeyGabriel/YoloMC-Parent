@@ -12,7 +12,7 @@ import org.bukkit.command.CommandSender;
 import java.util.List;
 
 /**
- * Wrapper que armazena comandos do BukkitAPI.
+ * Wrapper que armazena um comando do BukkitAPI.
  *
  * @author skyprogrammer
  */

@@ -1,5 +1,6 @@
 package br.com.yolomc.core.profile;
 
+import br.com.yolomc.core.util.ChatColor;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -13,11 +14,12 @@ import lombok.Getter;
 @AllArgsConstructor
 public class Tag {
 
-    private char colorChar;
+    private ChatColor color;
     private String name;
+    private String teamId;
     private String prefix;
 
     public String getColouredName(boolean bold) {
-        return colorChar + (bold ? "§l" + name.toUpperCase() : name);
+        return ChatColor.COLOR_CHAR + color.getChar() + (bold ? ChatColor.BOLD + name.toUpperCase() : name);
     }
 }

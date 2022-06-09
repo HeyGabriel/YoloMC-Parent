@@ -29,8 +29,6 @@ public class YoloPlayer {
     private Tag tag;
 
     private List<PackageGroup> groups = new ArrayList<>();
-    private List<PackageGroup> groupsHistory = new ArrayList<>();
-
     private List<PackagePermission> permissions = new ArrayList<>();
 
     public String getId() {

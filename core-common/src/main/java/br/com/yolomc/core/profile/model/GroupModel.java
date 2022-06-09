@@ -11,15 +11,15 @@ import lombok.Getter;
 @Getter
 public class GroupModel {
 
+    private int id;
     private String name;
-    private String teamName;
 
     public GroupModel(Group group) {
+        this.id = group.getId();
         this.name = group.getName();
-        this.teamName = group.getTeamName();
     }
 
     public boolean stillExist() {
-        return Commons.getGroupManager().groupExists(getName());
+        return Commons.getGroupManager().groupExists(getId());
     }
 }

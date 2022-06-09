@@ -11,15 +11,11 @@ import java.util.List;
  */
 public final class GroupManager {
 
-    public Group getGroup(String name) {
+    public Group getGroup(int id) {
         return null;
     }
 
     public List<Group> getAllGroups() {
-        return null;
-    }
-
-    public List<Group> getGroupsByTeam(String teamName) {
         return null;
     }
 
@@ -31,11 +27,11 @@ public final class GroupManager {
 
     }
 
-    public void unregisterGroup(String name) {
+    public void unregisterGroup(int id) {
 
     }
 
-    public boolean groupExists(String name) {
+    public boolean groupExists(int id) {
         return false;
     }
 }
